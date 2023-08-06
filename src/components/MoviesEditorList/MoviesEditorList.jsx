@@ -1,13 +1,14 @@
+import styles from './MoviesEditorList.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const MoviesList = ({ movies }) => {
+const MoviesEditorList = ({ movies }) => {
   const location = useLocation();
   return (
     <ul>
       {movies &&
         movies.map(({ id, title }) => (
-          <li key={id}>
+          <li key={id} className={styles.movielink}>
             <Link to={`/movies/${id}`} state={{ from: location }}>
               {title}
             </Link>
@@ -17,7 +18,7 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-MoviesList.propTypes = {
+MoviesEditorList.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -26,4 +27,4 @@ MoviesList.propTypes = {
   ),
 };
 
-export default MoviesList;
+export default MoviesEditorList;
