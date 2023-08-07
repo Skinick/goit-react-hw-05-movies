@@ -1,3 +1,4 @@
+import styles from './CastPage.module.css';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loader from 'components/Loader/Loader';
@@ -30,10 +31,11 @@ const CastPage = () => {
     <div>
       {loading && <Loader />}
       {error && <p>Something goes wrong</p>}
-      <ul>
+      <ul className={styles.list}>
         {actors.map(actor => (
-          <li key={actor.id}>
+          <li className={styles.item} key={actor.id}>
             <img
+              className={styles.foto}
               width="200px"
               src={
                 actor.profile_path
@@ -42,8 +44,10 @@ const CastPage = () => {
               }
               alt={actor.original_name}
             />
-            <p>{actor.name}</p>
-            <p>Character: {actor.character}</p>
+            <div className={styles.info}>
+              <p>{actor.name}</p>
+              <p>Character: {actor.character}</p>
+            </div>
           </li>
         ))}
       </ul>

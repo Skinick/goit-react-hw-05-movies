@@ -1,0 +1,40 @@
+.list {
+  display: grid;
+  gap: 20px;
+  align-items: first baseline;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @media screen and (min-width: 1199px) {
+    gap: 10px;
+  }
+}
+
+.item {
+  padding-top: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 11px 8px 26px -9px rgba(0, 0, 0, 0.82);
+  transition: all 0.3s;
+}
+
+.foto {
+  overflow: hidden;
+  display: block;
+  max-width: 90%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  @media screen and (max-width: 480px) {
+    width: 90%;
+  }
+}
+
+.info {
+  padding: 10px 10px;
+  text-align: center;
+  word-break: break-all;
+}

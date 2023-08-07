@@ -89,3 +89,19 @@ img {
     gap: 0px;
   }
 }
+
+.list {
+  display: flex;
+  gap: 20px;
+  font-size: 25px;
+  text-decoration: none;
+  color: #8d2222e1;
+  list-style-type: none;
+}
+
+.itemLink {
+  font-size: 25px;
+  text-decoration: none;
+  color: #8d2222e1;
+  font-weight: 600;
+}
