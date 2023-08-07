@@ -26,7 +26,7 @@ const MoviesPage = () => {
         }
         setMovies(results);
       } catch (error) {
-        setError(error.massage);
+        setError(error.message);
       }
     };
     fetchSearchMovies();
