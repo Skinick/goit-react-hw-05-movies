@@ -5,10 +5,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import MoviesEditorList from 'components/MoviesEditorList/MoviesEditorList';
 import { searchMovies } from 'services/api-movies';
 import Searchbar from 'components/Searchbar/Searchbar';
+import Loader from 'components/Loader/Loader';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const query = searchParams.get('query');
@@ -19,6 +21,7 @@ const MoviesPage = () => {
     }
 
     const fetchSearchMovies = async () => {
+      setLoading(true);
       try {
         const { results } = await searchMovies(query);
         if (results.length === 0) {
@@ -27,6 +30,8 @@ const MoviesPage = () => {
         setMovies(results);
       } catch (error) {
         setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
     fetchSearchMovies();
@@ -44,6 +49,7 @@ const MoviesPage = () => {
     <div>
       <Searchbar onSubmit={searchMoviesByQuery} />
       <ToastContainer position="top-right" autoClose={3000} />
+      {loading && <Loader />}
       {movies && <MoviesEditorList movies={movies} />}
       {error && <p>Something goes wrong</p>}
     </div>

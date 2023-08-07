@@ -14,7 +14,7 @@ const CastPage = () => {
       setLoading(true);
       try {
         const { cast } = await fetchMovieActors(movieId);
-        console.log(cast);
+
         setActors(cast);
       } catch (error) {
         setError(error.message);
@@ -35,7 +35,11 @@ const CastPage = () => {
           <li key={actor.id}>
             <img
               width="200px"
-              src={IMAGE_URL + actor.profile_path}
+              src={
+                actor.profile_path
+                  ? IMAGE_URL + actor.profile_path
+                  : `https://bitsofco.de/content/images/2018/12/broken-1.png`
+              }
               alt={actor.original_name}
             />
             <p>{actor.name}</p>

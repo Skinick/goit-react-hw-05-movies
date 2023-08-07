@@ -88,7 +88,7 @@ const MovieDetailsPage = () => {
             <hr />
 
             <div>
-              <h3>Additional information</h3>
+            <h3>Additional information</h3>
               <ul>
                 <li>
                   <Link to="cast" state={{ from }}>

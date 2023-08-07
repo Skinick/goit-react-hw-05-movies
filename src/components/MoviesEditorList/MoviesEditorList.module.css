@@ -1,4 +1,24 @@
 .movielink::marker {
-    color: #8d2222e1;
-    font-size: 1.5em;
-  }
+  color: #8d2222e1;
+  font-size: 1.5em;
+}
+
+.movielink {
+  font-size: 25px;
+}
+
+.link {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  color: black;
+}
+
+.link:visited {
+  color: #8d2222e1;
+}
+
+.link:hover {
+  border-bottom: 1px solid;
+  color: #693535e1;
+}

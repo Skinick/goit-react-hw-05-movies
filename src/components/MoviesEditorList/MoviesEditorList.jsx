@@ -9,7 +9,10 @@ const MoviesEditorList = ({ movies }) => {
       {movies &&
         movies.map(({ id, title }) => (
           <li key={id} className={styles.movielink}>
-            <Link to={`/movies/${id}`} state={{ from: location }}>
+            <Link
+              className={styles.link}
+              to={`/movies/${id}`}
+              state={{ from: location }}>
               {title}
             </Link>
           </li>
