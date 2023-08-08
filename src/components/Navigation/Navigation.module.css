@@ -3,22 +3,21 @@ nav {
   align-items: center;
   gap: 30px;
   padding: 8px 0;
-  border-bottom: 1px solid #8d2222e1;
 }
 
 .link {
   padding: 8px 26px;
   border-radius: 4px;
   text-decoration: none;
-  color: #8d2222e1;
+  color: #2316d2ea;
   background-color: #fff;
-  outline: 2px solid #8d2222e1;
+  outline: 2px solid #2316d2ea;
   font-weight: 500;
   font-size: 18px;
 }
 
 .active {
   composes: link;
-  background-color: #8d2222e1;
+  background-color: #2316d2ea;
   color: #fff;
 }
