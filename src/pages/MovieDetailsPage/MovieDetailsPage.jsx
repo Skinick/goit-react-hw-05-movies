@@ -73,6 +73,7 @@ const MovieDetailsPage = () => {
                   }
                   alt={movie.original_title}
                   widht="300px"
+                  className={styles.pictureMovie}
                 />
               </div>
 

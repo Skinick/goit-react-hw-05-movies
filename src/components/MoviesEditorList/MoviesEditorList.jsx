@@ -12,7 +12,8 @@ const MoviesEditorList = ({ movies }) => {
             <Link
               className={styles.link}
               to={`/movies/${id}`}
-              state={{ from: location }}>
+              state={{ from: location }}
+            >
               {title}
             </Link>
           </li>

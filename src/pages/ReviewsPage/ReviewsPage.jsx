@@ -1,3 +1,4 @@
+import styles from './ReviewsPage.module.css';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Loader from 'components/Loader/Loader';
@@ -14,7 +15,6 @@ const ReviewsPage = () => {
       setLoading(true);
       try {
         const { results } = await fetchMovieReviews(movieId);
-        console.log(results);
         setReviews(results);
       } catch (error) {
         setError(error.massage);
@@ -34,9 +34,9 @@ const ReviewsPage = () => {
         <div>
           <ul>
             {reviews.map(review => (
-              <li key={review.id}>
+              <li key={review.id} className={styles.reviewsitem}>
                 <h2>Author: {review.author}</h2>
-                <p>{review.content}</p>
+                <p className={styles.reviewstext}>{review.content}</p>
               </li>
             ))}
           </ul>
